@@ -46,20 +46,29 @@
     transition: color 0.3 ease;
 }
 .navbar .menu li a:hover{
-    color: crimson;
+    color: #111;
 }
 
 .home {
     display: flex;
-    background: url("Custom-Software.jpg") no-repeat center;
+    background: url("C:/Users/Dell/Desktop/Custom-Software.jpg") no-repeat center;
     height: 100vh;
     /* color: #fff; */
     min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-.home .max-width{
+/* .home .max-width{
     margin: auto 0 auto 40px;
-}
+} */
+.home .max-width{
+    width: 100%;
+    display: flex;
+  }
+  .home .max-width .row{
+    margin-right: 0;
+  }
 .home .home-content .text-1{
     font-size: 27px;
 
@@ -81,6 +90,11 @@
 section{
     padding: 100px 0;
 }
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
 .about, .services, .skills, .contact{
    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -101,7 +115,7 @@ section .title{
     margin-bottom: 60px;
     padding-bottom: 20px;
 }
-.about .title::before{
+section .title::before{
     content: "";
     position: absolute;
     bottom: 0px;
@@ -111,8 +125,7 @@ section .title{
     background: #111;
     transform: translateX(-50%);
 }
-.about .title::after{
-    content: "who i am";
+section .title::after{
     position: absolute;
     bottom: -12px;
     left: 50%;
@@ -121,6 +134,9 @@ section .title{
     padding: 5px;
     background: #fff;
     transform: translateX(-50%);
+}
+.about .title::after{
+    content: "who i am";
 }
 .about .about-content{
     display: flex;
@@ -153,33 +169,43 @@ section .title{
 }
 
 .services{
-    color: #fff;
+    color:#fff;
     background: #111;
 }
-.services .title::before{
+.services .title::before,
+.teams .title::before{
     background: #fff;
 }
-.services .title::after{
+.services .title::after,
+.teams .title::after{
     background: #111;
     content: "what i provide";
 }
 .services .serv-content .card{
-    width: calc(33% -20px);
+    width: calc(33% - 20px);
     background: #222;
     text-align: center;
     border-radius: 6px;
-    padding: 20px 25px;
+    padding: 50px 25px;
     cursor: pointer;
-    transition: all 0.3 ease;
-}
-.services .serv-content .card .box{
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
 }
 .services .serv-content .card:hover{
     background: crimson;
 }
+.services .serv-content .card .box{
+    transition: all 0.3s ease;
+}
 .services .serv-content .card:hover .box{
     transform: scale(1.05);
+}
+.services .serv-content .card i{
+    font-size: 50px;
+    color: crimson;
+    transition: color 0.3s ease;
+}
+.services .serv-content .card:hover i{
+    color: #fff;
 }
 .services .serv-content .card .text{
     font-size: 25px;
@@ -191,57 +217,73 @@ section .title{
     content: "what i know";
 }
 .skills .skills-content .column{
-    width: calc(50% -30px);
+    width: calc(50% - 30px);
 }
 .skills .skills-content .left .text{
-    font-size: 25px;
+    font-size: 30px;
     font-weight: 600;
-    margin: 10px;
+    margin-bottom: 10px;
 }
 .skills .skills-content .left p{
-    text-align: center;
+    text-align: justify;
+    font-size: 20px;
 }
+/* .skills .skills-content .left a{
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px 16px;
+    margin-top: 20px;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.skills .skills-content .left a:hover{
+    color: crimson;
+    background: none;
+} */
 .skills .skills-content .right .bars{
     margin-bottom: 15px;
 }
 .skills .skills-content .right .info{
     display: flex;
-    align-items: center;
     margin-bottom: 5px;
+    align-items: center;
     justify-content: space-between;
 }
-.skills .skills-content .right .span{
+.skills .skills-content .right span{
     font-weight: 500;
     font-size: 18px;
 }
 .skills .skills-content .right .line{
     height: 5px;
     width: 100%;
-    background: lightgray;
+    background: lightgrey;
     position: relative;
 }
 .skills .skills-content .right .line::before{
-     content: "";
-     position: absolute;
-     height: 100%;
-     width: 80%;
-     left: 0;
-     right: 0;
-     background: crimson;
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: crimson;
 }
-.skills .skills-content .right .html::before{
+.skills-content .right .html::before{
     width: 90%;
 }
-.skills .skills-content .right .css::before{
+.skills-content .right .css::before{
     width: 80%;
 }
-.skills .skills-content .right .js::before{
+.skills-content .right .js::before{
     width: 60%;
 }
-.skills .skills-content .right .react::before{
+.skills-content .right .php::before{
     width: 50%;
 }
-.skills .skills-content .right .mysql::before{
+.skills-content .right .mysql::before{
     width: 70%;
 }
 
@@ -249,7 +291,7 @@ section .title{
     content: "get in touch";
 }
 .contact .contact-content .column{
-    width: calc(50% -30px);
+    width: calc(50% - 30px);
 }
 .contact .contact-content .text{
     font-size: 20px;
@@ -259,6 +301,9 @@ section .title{
 .contact .contact-content .left p{
     text-align: justify;
 }
+.contact .contact-content .left .icons{
+    margin: 10px 0;
+}
 .contact .contact-content .row{
     display: flex;
     height: 65px;
@@ -266,6 +311,10 @@ section .title{
 }
 .contact .contact-content .row .info{
     margin-left: 30px;
+}
+.contact .contact-content .row i{
+    font-size: 25px;
+    color: crimson;
 }
 .contact .contact-content .info .head{
     font-weight: 500;
@@ -283,15 +332,14 @@ section .title{
     margin-bottom: 15px;
 }
 .contact .right form .textarea{
-    
+    height: 80px;
+    width: 100%;
 }
 .contact .right form .name{
     margin-right: 10px;
 }
-.contact .right form .email{
-    margin-left: 10px;
-}
-.contact .right form .field input{
+.contact .right form .field input,
+.contact .right form .textarea textarea{
     height: 100%;
     width: 100%;
     border: 1px solid lightgrey;
@@ -299,4 +347,37 @@ section .title{
     outline: none;
     padding: 0 15px;
     font-size: 17px;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+}
+.contact .right form .field input:focus,
+.contact .right form .textarea textarea:focus{
+    border-color: #b3b3b3;
+}
+.contact .right form .textarea textarea{
+  padding-top: 10px;
+  resize: none;
+}
+.contact .right form .button-area{
+  display: flex;
+  align-items: center;
+}
+.right form .button-area button{
+  color: #fff;
+  display: block;
+  width: 160px!important;
+  height: 45px;
+  outline: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  flex-wrap: nowrap;
+  background: crimson;
+  border: 2px solid crimson;
+  transition: all 0.3s ease;
+}
+.right form .button-area button:hover{
+  color: crimson;
+  background: none;
 }
